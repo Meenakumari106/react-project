@@ -1,0 +1,489 @@
+*
+{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* overflow: hidden; */
+}
+
+
+.header {
+    display: flex;
+    flex-direction: column; /* Change to column layout on small screens */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px;
+    background-color: blue;
+}
+
+@media only screen and (min-width: 600px) {
+    /* Apply these styles only for screens with a minimum width of 600px */
+    .header {
+        flex-direction: row; /* Change back to row layout */
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo {
+    margin-top: 5px;
+    margin-left: 20px;
+    width: 90px;
+    height: auto; /* Ensure the height adjusts proportionally */
+    max-width: 100%; /* Prevent the logo from exceeding its container's width */
+    border-radius: 40px;
+    /* padding:5px; */
+    /* opacity: 0.5; */
+}
+
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    .logo {
+        margin: 5px auto; /* Center the logo horizontally and reduce vertical margin */
+        width: 70px; /* Decrease the width for smaller screens */
+        border-radius: 30px; /* Adjust the border-radius */
+    }
+}
+
+
+.nav-items {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px; /* Add padding for better spacing */
+    text-decoration: none;
+}
+
+.nav-items > ul {
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%; /* Ensure the ul does not exceed its container's width */
+    overflow-x: auto; /* Enable horizontal scrolling if the content overflows */
+    padding: 0; /* Reset padding */
+}
+
+.nav-items > ul > li {
+    list-style: none; /* Remove default list styling */
+    margin: 0 5px; /* Add some margin between list items */
+}
+
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    .nav-items {
+        flex-direction: column; /* Change to column layout */
+        align-items: flex-start; /* Align items to the start of the column */
+    }
+    
+    .nav-items > ul {
+        flex-direction: column; /* Change to column layout */
+        align-items: center; /* Align items to the center of the column */
+    }
+}
+
+
+.list-header {
+    font-size: 20px;
+    color: white;
+    opacity: 1;
+    cursor: pointer;
+    margin: 5px; /* Add margin for spacing between list items */
+}
+
+.list-header:hover {
+    opacity: 0.5;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    .list-header {
+        font-size: 16px; /* Decrease font size for smaller screens */
+    }
+}
+
+.nav-items > ul > button {
+    border-radius: 20px;
+    padding: 8px 16px; /* Add padding for better button appearance */
+    border: none; /* Remove default border */
+    background-color: transparent; /* Set background color to transparent */
+    color: black; /* Set button text color */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+}
+
+.nav-items > ul > button:hover {
+    background-color: black; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+
+.restocard {
+    height: auto; /* Change height to auto to allow content to determine height */
+    max-width: 100%; /* Ensure the card does not exceed its container's width */
+    padding: 10px; /* Add padding for better spacing */
+    margin: 10px; /* Add margin for spacing between cards */
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border 0.3s; /* Add transition effect for border */
+}
+
+.restocard:hover {
+    border: 1px solid black; /* Change border on hover */
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    max-width: 100%; /* Ensure the search bar does not exceed its container's width */
+}
+
+.search-box {
+    margin-right: 5px;
+    width: 100%; /* Set width to 100% to make it responsive */
+    max-width: 700px; /* Limit maximum width for better readability */
+    padding: 13px;
+}
+
+.search > button {
+    border-radius: 30px;
+    padding: 5px 15px; /* Adjust padding for better button appearance */
+    background-color: black;
+    color: white;
+}
+
+.search > button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.input {
+    border: 1px solid #e5e5e5; /* Combine border properties for simplicity */
+    box-shadow: 0px 1px 1px 1px #e5e5e5;
+    height: 40px; /* Increase height for better usability */
+    padding: 10px; /* Add padding for better spacing */
+    width: 100%; /* Set width to 100% to make it responsive */
+    max-width: 500px; /* Limit maximum width for better readability */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.imglogo {
+    width: 100%; /* Set width to 100% for responsiveness */
+    height: auto; /* Let the height adjust automatically to maintain aspect ratio */
+    max-height: 50%; /* Limit maximum height for better appearance */
+    border-radius: 30px;
+    /* border: 1px solid black; */
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%; /* Allow the container to adapt to smaller screens */
+    padding: 0 10px; /* Add padding to the container to provide space on smaller screens */
+    margin: 0 auto;
+}
+
+.offer {
+    color: red;
+}
+
+.location {
+    color: darkblue;
+}
+
+.cuisines {
+    font-size: small;
+    color: orange;
+    overflow-wrap: break-word;
+}
+
+.filter {
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-btn {
+    border-radius: 20px; /* Adjusted border-radius for better appearance on smaller screens */
+    padding: 10px; /* Increased padding for better touch interaction on smaller screens */
+}
+
+.filter-btn:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px; /* Added padding to adjust for smaller screens */
+}
+
+.shimmer-cards {
+    height: 300px;
+    width: 90%; /* Adjusted width to be responsive */
+    max-width: 256px; /* Added max-width to ensure it doesn't exceed certain width */
+    background-color: #b3aeae;
+    margin: 10px; /* Adjusted margin for better spacing on smaller screens */
+    padding: 10px; /* Increased padding for better spacing */
+    border: 2px solid #f0f0f0;
+    border-radius: 20px; /* Adjusted border-radius for better appearance on smaller screens */
+}
+
+.shimmerimg {
+    width: 100%;
+    height: 50%;
+    border-radius: 15px; /* Adjusted border-radius for better appearance on smaller screens */
+    background-color: #494848;
+}
+
+
+.login{
+    /* padding:0 20px;
+    cursor:pointer;
+    border:1px solid white;
+    border:80%; */
+    /* display: inline-block; */
+ 
+  font-weight: bold;
+  text-decoration: none;
+  background:white;
+  color: blue; /* blue color, you can change it */
+  cursor: pointer;
+  padding: 10px 20px; /* Adjust padding for better touch experience on smaller screens */
+  font-size: 14px; /* Decrease font size for better readability on smaller screens */
+  border-radius: 20px; 
+  
+}
+
+
+.cute {
+    max-width: 100%; /* Ensure it doesn't exceed the width of its container */
+    height: auto; /* Maintain aspect ratio */
+    margin: 100px auto 0; /* Center the element horizontally and provide top margin */
+}
+
+.restramenu {
+    margin: 5% 5% 10% 5%; /* Adjust margin using percentage values */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 0 0 0; /* Adjust margin using percentage values */
+    border: 2px solid black;
+    padding: 2%; /* Adjust padding using percentage values */
+    border-radius: 15px;
+}
+
+.restramenu > h2 {
+    color: blue;
+    padding: 2%; /* Adjust padding using percentage values */
+    margin: 2% 0 0 0; /* Adjust margin using percentage values */
+}
+
+.restramenu > h1 {
+    color: purple;
+}
+
+
+.user-card {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    flex-direction: column;
+    margin: 5% 5% 10% 5%; /* Adjust margin using percentage values */
+    background-color: black;
+    width: 90%; /* Adjust width using percentage values */
+    max-width: 1200px; /* Set maximum width */
+    height: 500px;
+}
+
+.user-card > h3 {
+    color: #b3aeae;
+    margin: 2%; /* Adjust margin using percentage values */
+}
+
+
+.acodium {
+    background-color: rgba(253, 248, 248, 0.685);
+    width: 90%; /* Adjust width using percentage values */
+    max-width: 700px; /* Set maximum width */
+    margin: 0 auto;
+    margin-bottom: 5px;
+    box-shadow: 0 0 10px rgb(165, 158, 158);
+    padding: 5px;
+} 
+
+.acodium-inside > span {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.acodium-inside {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.acodium-inside:hover {
+    cursor: pointer;
+}
+
+.no-list-style {
+    list-style-type: none;
+}
+
+.items {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column; /* Change to column for better responsiveness */
+    box-shadow: 0 0 10px rgb(165, 158, 158);
+}
+
+.items-name {
+    padding: 5px;
+}
+
+.image-items {
+    width: 100%; /* Adjust to fill the container */
+    height: auto; /* Ensure aspect ratio is maintained */
+    max-width: 90px; /* Set maximum width */
+    max-height: 90px; /* Set maximum height */
+    padding: 2px;
+}
+
+.forwidth {
+    width: 75%; /* 9/12 = 75% */
+}
+
+.forw {
+    width: 25%; /* 3/12 = 25% */
+    padding: 2px;
+}
+
+.addbutton {
+    position: absolute;
+    right: 0; /* Adjust the position as needed */
+    top: 0; /* Adjust the position as needed */
+}
+
+.but {
+    background: black;
+    color: white;
+    margin: 20px 5px 20px 0;
+    padding: 5px 10px; /* Adjust padding as needed */
+    box-shadow: 0 0 5px white;
+    border-radius: 5px; /* Specify the border-radius value */
+    cursor: pointer; /* Add cursor style for better UX */
+}
+
+.nav-items > ul > a {
+    text-decoration: none;
+}
+
+.list-header {
+    text-decoration: none;
+}
+
+
+.contact {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    background-color: black;
+    width: 90%; /* Adjust width as needed */
+    max-width: 1200px; /* Limit maximum width */
+    height: auto; /* Adjust height as needed */
+}
+
+.about-box {
+    margin: 2%;
+    width: 90%; /* Adjust width as needed */
+    max-width: 500px; /* Limit maximum width */
+    padding: 10px; /* Adjust padding as needed */
+    border-radius: 18px;
+}
+
+.contact > h3 {
+    color: #b3aeae;
+    margin: 2%;
+}
+
+.contact > h1 {
+    color: white;
+    margin: 2%;
+}
+
+.cart-design {
+    display: flex;
+    align-items: center;
+    width: 90%; /* Adjust width as needed */
+    max-width: 1400px; /* Limit maximum width */
+    height: auto; /* Adjust height as needed */
+    background: rgb(0, 0, 0);
+    color: #e5e5e5;
+    padding: 40px;
+    flex-direction: column;
+}
+
+.cart-design > h2 {
+    margin: 50px 20px 20px 20px;
+    padding: 5px;
+    color: white;
+}
+
+.cartitems {
+    width: 90%; /* Adjust width as needed */
+    max-width: 700px; /* Limit maximum width */
+    /* Add other styles as needed */
+}
+
+.clearcart {
+    margin: 30px; /* Adjust margin as needed */
+    padding: 15px; /* Adjust padding as needed */
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px rgb(165, 158, 158);
+    border-radius: 10px;
+}
+
+.cutecartgirl {
+    height: 15vw; /* Adjust height as needed */
+    max-height: 200px; /* Limit maximum height */
+    width: 15vw; /* Adjust width as needed */
+    max-width: 200px; /* Limit maximum width */
+    border-radius: 50%;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.cartempty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #b3aeae;
+}
+
+
